@@ -15,3 +15,4 @@ else:
         argument_number += 1
 
 print(f"Total arguments: {len(sys.argv)}")
+print()
