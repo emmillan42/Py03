@@ -18,7 +18,7 @@ def get_player_pos() -> tuple[float, float, float]:
 
         for value in (x, y, z):
             try:
-                position_values.append(float(value.strip()))
+                position_values += [float(value.strip())]
             except ValueError as error:
                 print(
                     f"Error on parameter '{value.strip()}': {error}"

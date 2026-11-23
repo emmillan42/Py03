@@ -22,8 +22,9 @@ def consume_event(
     events: list[tuple[str, str]]
 ) -> typing.Generator[tuple[str, str], None, None]:
     while len(events) > 0:
-        event = random.choice(events)
-        events.remove(event)
+        index = random.randint(0, len(events) - 1)
+        event = events[index]
+        del events[index]
         yield event
 
 
@@ -41,7 +42,7 @@ def main() -> None:
 
     for _ in range(10):
         event = next(event_generator)
-        stored_events.append(event)
+        stored_events += [event]
 
     print(f"Built list of 10 events: {stored_events}")
 

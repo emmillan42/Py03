@@ -1,4 +1,3 @@
-
 import sys
 
 print("=== Player Score Analytics ===")
@@ -8,7 +7,7 @@ scores: list[int] = []
 for argument in sys.argv[1:]:
     try:
         score = int(argument)
-        scores.append(score)
+        scores += [score]
     except ValueError:
         print(f"Invalid parameter: '{argument}'")
 

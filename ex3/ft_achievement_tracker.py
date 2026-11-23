@@ -26,7 +26,18 @@ achievements = [
 
 
 def gen_player_achievements() -> set[str]:
-    number = random.randint(9, 11)
+    total = len(achievements)
+    half = total // 2
+
+    low = half - 1
+    if low < 0:
+        low = 0
+
+    high = half + 1
+    if high > total:
+        high = total
+
+    number = random.randint(low, high)
     selected = random.sample(achievements, number)
     player_achievements = set(selected)
     return player_achievements
